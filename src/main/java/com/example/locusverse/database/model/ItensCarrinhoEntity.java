@@ -1,0 +1,33 @@
+package com.example.locusverse.database.model;
+import jakarta.persistence.*;
+import lombok.*;
+import java.math.BigDecimal;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "itens_carrinho")
+public class ItensCarrinhoEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_carrinho")
+    private CarrinhoEntity carrinho;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_produto")
+    private ProdutoEntity produto;
+
+    @Column(nullable = false)
+    private Integer quantidade;
+
+    @Column(name = "preco_unitario", nullable = false, precision = 10, scale = 2)
+    private BigDecimal precoUnitario;
+}

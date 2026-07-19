@@ -1,12 +1,13 @@
 package com.example.locusverse.service;
 
-import com.example.locusverse.exception.NotFoundException;
-import com.example.locusverse.repository.IUsuarioRepository;
+import com.example.locusverse.database.repository.IUsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 

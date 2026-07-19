@@ -1,7 +1,9 @@
-package com.example.locusverse.repository;
+package com.example.locusverse.database.repository;
 
 import com.example.locusverse.database.model.ProdutoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IProdutoRepository extends JpaRepository<ProdutoEntity, Long> {
+import java.util.UUID;
+
+public interface IProdutoRepository extends JpaRepository<ProdutoEntity, UUID> {
 }

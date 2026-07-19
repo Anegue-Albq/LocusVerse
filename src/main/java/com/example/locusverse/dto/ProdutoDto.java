@@ -1,4 +1,4 @@
-package com.example.locusverse.database.dto;
+package com.example.locusverse.dto;
 
 import com.example.locusverse.database.model.CategoriaEntity;
 import com.example.locusverse.enums.CategoriaEnum;

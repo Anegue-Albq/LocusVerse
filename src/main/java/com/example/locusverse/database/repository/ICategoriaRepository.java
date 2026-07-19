@@ -1,4 +1,4 @@
-package com.example.locusverse.repository;
+package com.example.locusverse.database.repository;
 
 import com.example.locusverse.database.model.CategoriaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

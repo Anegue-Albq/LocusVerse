@@ -1,8 +1,9 @@
 package com.example.locusverse.enums;
 
 public enum CategoriaEnum {
-    ALIMENTO,
-    LIMPEZA,
-    ELETRONICO,
+    PELUCIA,
+    FUNKO_POP,
+    ACTION_FIGURE,
+    NENDOROID,
     OUTROS,
 }

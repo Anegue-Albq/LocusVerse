@@ -8,7 +8,7 @@ import com.example.locusverse.database.model.ProdutoEntity;
 import com.example.locusverse.database.model.UsuarioEntity;
 import com.example.locusverse.database.repository.ICarrinhoRepository;
 import com.example.locusverse.database.repository.IItensCarrinhoRepository;
-import com.example.locusverse.database.repository.IItensPedidoRepository;
+import com.example.locusverse.database.repository.IItensPedidosRepository;
 import com.example.locusverse.database.repository.IPedidoRepository;
 import com.example.locusverse.dto.CategoriaDto;
 import com.example.locusverse.dto.FinalizarPedidoDto;
@@ -34,7 +34,7 @@ public class PedidoService {
     private static final String STATUS_PEDIDO_PENDENTE = "PENDENTE";
 
     private final IPedidoRepository pedidoRepository;
-    private final IItensPedidoRepository itensPedidoRepository;
+    private final IItensPedidosRepository itensPedidoRepository;
     private final ICarrinhoRepository carrinhoRepository;
     private final IItensCarrinhoRepository itensCarrinhoRepository;
 

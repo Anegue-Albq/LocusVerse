@@ -1,7 +1,5 @@
-// ==========================================================================
 // auth.js — alternância de senha e validação client-side dos formulários
 // de login e cadastro
-// ==========================================================================
 (function () {
   "use strict";
 

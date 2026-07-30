@@ -1,7 +1,5 @@
-// ==========================================================================
 // suporte.js — accordion acessível (aria-expanded / aria-controls / hidden)
 // Apenas um painel fica aberto por vez, seguindo o layout do Figma.
-// ==========================================================================
 (function () {
   "use strict";
 

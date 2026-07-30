@@ -1,7 +1,5 @@
-// ==========================================================================
 // main.js — comportamento compartilhado entre todas as páginas
 // (menu mobile, ano do rodapé)
-// ==========================================================================
 (function () {
   "use strict";
 

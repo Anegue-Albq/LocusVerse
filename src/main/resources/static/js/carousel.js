@@ -1,7 +1,5 @@
-// ==========================================================================
 // carousel.js — carrossel de personagens da Home
 // Segue o padrão de carrossel acessível: grupo de slides + tablist de seleção
-// ==========================================================================
 (function () {
   "use strict";
 

@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Home / Landing Page
+   ========================================================================== */
+body.theme-dark {
+  background-color: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+/* Hero ------------------------------------------------------------------ */
+.hero {
+  background: radial-gradient(circle at 70% 30%, #1c2470 0%, var(--color-navy-900) 55%, var(--color-navy-950) 100%);
+  padding-block: var(--space-7);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hero__viewport {
+  position: relative;
+}
+
+.hero__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.hero__slide[hidden] {
+  display: none;
+}
+
+.hero__text {
+  flex: 1 1 320px;
+  max-width: 460px;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, var(--fs-3xl));
+  font-weight: 800;
+  color: var(--color-yellow-500);
+  letter-spacing: 0.01em;
+}
+
+.hero__desc {
+  font-size: var(--fs-md);
+  color: var(--color-gray-100);
+  max-width: 32ch;
+}
+
+.hero__figure {
+  flex: 0 1 260px;
+  max-width: 260px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+.hero__next {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-yellow-500);
+  cursor: pointer;
+  padding: var(--space-3);
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+}
+
+.hero__next:hover {
+  background-color: rgba(255, 201, 0, 0.12);
+}
+
+.hero__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.hero__dots button {
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.9rem;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  min-height: 36px;
+}
+
+.hero__dots button[aria-selected="true"] {
+  border-color: var(--color-yellow-500);
+  color: var(--color-yellow-500);
+  font-weight: 700;
+}
+
+/* Benefícios -------------------------------------------------------------- */
+.benefits {
+  background-color: var(--color-navy-950);
+  padding-block: var(--space-6);
+  border-block: 1px solid rgba(255, 201, 0, 0.2);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.benefit__icon {
+  color: var(--color-yellow-500);
+  flex-shrink: 0;
+}
+
+.benefit__title {
+  font-size: var(--fs-sm);
+  color: var(--color-yellow-500);
+  margin-bottom: var(--space-1);
+}
+
+.benefit__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-100);
+  margin-bottom: 0;
+}
+
+/* Como funciona ------------------------------------------------------------ */
+.how-it-works {
+  background-color: var(--color-navy-900);
+  padding-block: var(--space-7);
+}
+
+.how-it-works__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.how-it-works__grid > div {
+  flex: 1 1 340px;
+}
+
+.how-it-works h2 {
+  color: var(--color-yellow-500);
+  font-size: var(--fs-xl);
+}
+
+.how-it-works__list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--color-gray-100);
+}
+
+.how-it-works__image {
+  flex: 1 1 320px;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+/* Sobre nós ----------------------------------------------------------------- */
+.about {
+  background-color: var(--color-navy-950);
+  padding-block: var(--space-7);
+}
+
+.about__content {
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about h2 {
+  color: var(--color-yellow-500);
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-5);
+}
+
+.about p {
+  color: var(--color-gray-100);
+  font-size: var(--fs-md);
+}

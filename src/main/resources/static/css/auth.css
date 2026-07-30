@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Login / Cadastro
+   ========================================================================== */
+body.theme-dark.auth-page {
+  background-color: var(--color-navy-900);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-page main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-7);
+}
+
+.auth-card {
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-lg);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  width: 100%;
+  max-width: 420px;
+  margin-inline: var(--space-4);
+}
+
+.auth-card h1 {
+  font-family: var(--font-script);
+  color: var(--color-blue-accent);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.auth-card .field label {
+  color: var(--color-navy-900);
+}
+
+.auth-card .form-links {
+  font-size: var(--fs-xs);
+  margin-top: calc(-1 * var(--space-3));
+  margin-bottom: var(--space-5);
+}
+
+.auth-card .switch-link {
+  text-align: center;
+  font-size: var(--fs-sm);
+  margin-top: var(--space-4);
+}
+
+.auth-card .legal-text {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-500);
+  margin-top: var(--space-5);
+  margin-bottom: 0;
+}

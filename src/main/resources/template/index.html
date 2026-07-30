@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocusVerso — Action figures colecionáveis com acabamento premium</title>
+  <meta name="description" content="LocusVerso: action figures personalizadas e colecionáveis, com acabamento premium, compra segura e envio rápido para todo o Brasil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
+        <span class="logo__brand" aria-hidden="true">LOCUS</span>
+        <span class="logo__sub" aria-hidden="true">Verso</span>
+      </a>
+
+      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
+        Abrir menu
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="main-nav__list">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#sobre-nos">Sobre nós</a></li>
+        </ul>
+        <div class="header-actions">
+          <a class="btn btn-outline-light btn-sm" href="login.html">Acesse sua conta</a>
+          <a class="btn btn-yellow btn-sm" href="cadastro.html">Crie sua conta</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- Hero / Carrossel de personagens -->
+    <section class="hero" aria-label="Destaques de personagens">
+      <div class="container hero__inner">
+        <div class="hero__viewport" aria-roledescription="carrossel" data-carousel>
+          <p class="sr-only" role="status" aria-live="polite" data-carousel-status>Mostrando personagem 1 de 3: Peres</p>
+
+          <ul class="hero__track">
+            <li class="hero__slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 3" data-slide>
+              <div class="hero__text">
+                <h1 class="hero__title">PERES</h1>
+                <p class="hero__desc">Acabamento premium para os verdadeiros colecionadores. Venha conheçer mais</p>
+                <a class="btn btn-primary" href="produtos.html">Compre agora</a>
+              </div>
+              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Peres" width="240" height="400" />
+            </li>
+
+            <li class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 de 3" data-slide hidden>
+              <div class="hero__text">
+                <h1 class="hero__title">ERIK</h1>
+                <p class="hero__desc">Peças que roubam a atenção de qualquer ambiente.</p>
+                <a class="btn btn-primary" href="produtos.html">Compre agora</a>
+              </div>
+              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Erik" width="240" height="400" />
+            </li>
+
+            <li class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 de 3" data-slide hidden>
+              <div class="hero__text">
+                <h1 class="hero__title">ENZO</h1>
+                <p class="hero__desc">Encontre o próximo destaque da sua estante.</p>
+                <a class="btn btn-primary" href="produtos.html">Compre agora</a>
+              </div>
+              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Enzo" width="240" height="400" />
+            </li>
+          </ul>
+
+          <button type="button" class="hero__next" data-carousel-next aria-label="Ver próximo personagem do carrossel">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="hero__dots" role="tablist" aria-label="Selecionar personagem em destaque" data-carousel-dots>
+          <button type="button" role="tab" id="hero-tab-0" aria-controls="hero-panel-0" aria-selected="true" data-slide-index="0">Peres</button>
+          <button type="button" role="tab" id="hero-tab-1" aria-controls="hero-panel-1" aria-selected="false" tabindex="-1" data-slide-index="1">Erik</button>
+          <button type="button" role="tab" id="hero-tab-2" aria-controls="hero-panel-2" aria-selected="false" tabindex="-1" data-slide-index="2">Enzo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits" aria-label="Benefícios da LocusVerso">
+      <div class="container benefits__grid">
+        <div class="benefit">
+          <svg class="benefit__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>
+            <h2 class="benefit__title">Produtos originais</h2>
+            <p class="benefit__desc">Trabalhamos apenas com os produtos licenciados</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <svg class="benefit__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.8" />
+            <path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <div>
+            <h2 class="benefit__title">Compra segura</h2>
+            <p class="benefit__desc">Seus dados protegidos do início ao fim</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <svg class="benefit__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M2 8h11v8H2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M13 11h4l3 3v2h-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <circle cx="6" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6" />
+            <circle cx="16.5" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6" />
+          </svg>
+          <div>
+            <h2 class="benefit__title">Envio rápido</h2>
+            <p class="benefit__desc">Entregas rápidas por todo o Brasil</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="how-it-works" id="como-funciona">
+      <div class="container how-it-works__grid">
+        <div>
+          <h2>Como Funciona?</h2>
+          <ol class="how-it-works__list">
+            <li>Escolha seu personagem, explore nossa coleção e encontre a action figure perfeita para sua estante.</li>
+            <li>Finalize sua compra adicione seus produtos ao carrinho e conclua o pedido de forma rápida e segura.</li>
+            <li>Receba em casa, sua action figure será enviada com cuidado para chegar em perfeitas condições.</li>
+          </ol>
+        </div>
+        <img class="how-it-works__image" src="assets/figure-placeholder.svg" alt="Fotos ilustrativas de três action figures personalizadas lado a lado" width="360" height="240" />
+      </div>
+    </section>
+
+    <!-- Sobre nós -->
+    <section class="about" id="sobre-nos">
+      <div class="container about__content">
+        <h2>Sobre nós</h2>
+        <p>Somos apaixonados pelo universo dos colecionáveis e acreditamos que cada action figure vai muito além de um simples item decorativo. Cada peça representa histórias, personagens e momentos que marcaram gerações inteiras nos games, filmes, animes e séries.</p>
+        <p>Nosso objetivo é oferecer uma experiência única para colecionadores, reunindo figuras com alto nível de detalhe, acabamento cuidadoso e qualidade pensada para quem realmente valoriza cada peça da sua coleção.</p>
+        <p>Mais do que vender produtos, buscamos ajudar você a construir uma coleção que tenha identidade, significado e presença. Seja para começar sua jornada ou expandir o que já existe na sua estante, aqui é o lugar onde sua paixão ganha forma.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
+          <span class="logo__brand" aria-hidden="true">LOCUS</span>
+          <span class="logo__sub" aria-hidden="true">Verso</span>
+        </a>
+        <ul class="site-footer__social" aria-label="Redes sociais da LocusVerso">
+          <li><a href="#" aria-label="LocusVerso no X (Twitter)">X</a></li>
+          <li><a href="#" aria-label="LocusVerso no Instagram">IG</a></li>
+          <li><a href="#" aria-label="LocusVerso no YouTube">YT</a></li>
+          <li><a href="#" aria-label="LocusVerso no LinkedIn">in</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h2 id="footer-platform">Platform</h2>
+          <ul aria-labelledby="footer-platform">
+            <li><a href="#">Platform Overview</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Extensions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 id="footer-solutions">Solutions</h2>
+          <ul aria-labelledby="footer-solutions">
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Operations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 id="footer-learn">Learn</h2>
+          <ul aria-labelledby="footer-learn">
+            <li><a href="#">Learning Center</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Video Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 id="footer-resources">Resources</h2>
+          <ul aria-labelledby="footer-resources">
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Developers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 id="footer-company">Company</h2>
+          <ul aria-labelledby="footer-company">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="site-footer__bottom">© <span data-current-year>2026</span> LocusVerso. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+</html>

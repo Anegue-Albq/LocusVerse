@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Ajuda e Suporte
+   ========================================================================== */
+.support-section {
+  padding-block: var(--space-6);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.accordion-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: none;
+  border: none;
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.accordion-trigger__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gray-050);
+  color: var(--color-navy-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordion-trigger__text {
+  flex: 1;
+}
+
+.accordion-trigger__title {
+  font-weight: 700;
+  color: var(--color-navy-900);
+  font-size: var(--fs-md);
+  margin: 0;
+}
+
+.accordion-trigger__subtitle {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+.accordion-trigger__chevron {
+  color: var(--color-navy-900);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-trigger__chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: 0 var(--space-5) var(--space-5);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.accordion-panel[hidden] {
+  display: none;
+}
+
+.accordion-panel p {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-500);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.accordion-panel a {
+  font-weight: 700;
+}

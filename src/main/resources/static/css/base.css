@@ -319,10 +319,15 @@ button {
 
 .logo {
   display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
+  align-items: center;
   text-decoration: none;
-  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+
+.logo__image {
+  display: block;
+  width: 132px;
+  height: auto;
 }
 
 .logo__brand {

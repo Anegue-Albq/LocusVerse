@@ -2,7 +2,7 @@ package com.example.locusverse.handler;
 
 import com.example.locusverse.exception.ErrorResponse;
 import com.example.locusverse.exception.NotFoundException;
-import org.apache.coyote.BadRequestException;
+import com.example.locusverse.exception.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;

@@ -19,7 +19,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Set;
 
@@ -53,7 +52,6 @@ public class AuthenticationService {
                 .email(dto.email())
                 .roles(Set.of(role))
                 .senha(passwordEncoder.encode(dto.senha()))
-                .criadoEm(LocalDateTime.now())
                 .build()
         );
     }

@@ -12,6 +12,7 @@ import com.example.locusverse.dto.CarrinhoResponseDto;
 import com.example.locusverse.dto.CategoriaDto;
 import com.example.locusverse.dto.ItemCarrinhoResponseDto;
 import com.example.locusverse.dto.ProdutoResponseDto;
+import com.example.locusverse.enums.StatusPedido;
 import com.example.locusverse.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
@@ -24,7 +25,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarrinhoService {
 
-    private static final String STATUS_ABERTO = "ABERTO";
 
     private final ICarrinhoRepository carrinhoRepository;
     private final IItensCarrinhoRepository itensCarrinhoRepository;
@@ -32,11 +32,11 @@ public class CarrinhoService {
 
     // Busca o carrinho aberto do usuário, ou cria um novo se ele ainda não tiver.
     private CarrinhoEntity obterCarrinhoAberto(UsuarioEntity usuario) {
-        return carrinhoRepository.findByUsuarioAndStatus(usuario, STATUS_ABERTO)
+        return carrinhoRepository.findByUsuarioAndStatus(usuario, StatusPedido.ABERTO.name())
                 .orElseGet(() -> {
                     CarrinhoEntity novoCarrinho = new CarrinhoEntity();
                     novoCarrinho.setUsuario(usuario);
-                    novoCarrinho.setStatus(STATUS_ABERTO);
+                    novoCarrinho.setStatus(StatusPedido.ABERTO.name());
                     return carrinhoRepository.save(novoCarrinho);
                 });
     }

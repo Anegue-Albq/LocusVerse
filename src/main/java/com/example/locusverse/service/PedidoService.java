@@ -15,6 +15,7 @@ import com.example.locusverse.dto.FinalizarPedidoDto;
 import com.example.locusverse.dto.ItemPedidoResponseDto;
 import com.example.locusverse.dto.PedidoResponseDto;
 import com.example.locusverse.dto.ProdutoResponseDto;
+import com.example.locusverse.enums.StatusPedido;
 import com.example.locusverse.exception.BadRequestException;
 import com.example.locusverse.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -29,9 +30,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PedidoService {
 
-    private static final String STATUS_CARRINHO_ABERTO = "ABERTO";
-    private static final String STATUS_CARRINHO_FINALIZADO = "FINALIZADO";
-    private static final String STATUS_PEDIDO_PENDENTE = "PENDENTE";
+
 
     private final IPedidoRepository pedidoRepository;
     private final IItensPedidosRepository itensPedidoRepository;
@@ -40,7 +39,7 @@ public class PedidoService {
 
     @Transactional
     public PedidoResponseDto finalizarPedido(UsuarioEntity usuario, FinalizarPedidoDto dto) {
-        CarrinhoEntity carrinho = carrinhoRepository.findByUsuarioAndStatus(usuario, STATUS_CARRINHO_ABERTO)
+        CarrinhoEntity carrinho = carrinhoRepository.findByUsuarioAndStatus(usuario, StatusPedido.ABERTO.name())
                 .orElseThrow(() -> new BadRequestException("Você não tem um carrinho aberto"));
 
         List<ItensCarrinhoEntity> itensCarrinho = itensCarrinhoRepository.findByCarrinho(carrinho);
@@ -55,7 +54,7 @@ public class PedidoService {
 
         PedidoEntity pedido = new PedidoEntity();
         pedido.setUsuario(usuario);
-        pedido.setStatus(STATUS_PEDIDO_PENDENTE);
+        pedido.setStatus(StatusPedido.FINALIZADO.name());
         pedido.setValorTotal(valorTotal);
         pedido.setEnderecoEntrega(dto.enderecoEntrega());
         pedido = pedidoRepository.save(pedido);
@@ -69,7 +68,7 @@ public class PedidoService {
             itensPedidoRepository.save(itemPedido);
         }
 
-        carrinho.setStatus(STATUS_CARRINHO_FINALIZADO);
+        carrinho.setStatus(StatusPedido.FINALIZADO.name());
         carrinhoRepository.save(carrinho);
 
         return montarResposta(pedido);

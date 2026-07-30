@@ -70,3 +70,12 @@
   --transition-fast: 150ms ease;
   --transition-base: 220ms ease;
 }
+
+html[data-color-mode="accessible"] {
+  --color-yellow-500: #00b8d4;
+  --color-yellow-600: #008ca3;
+  --color-yellow-100: #d7f7fc;
+  --color-blue-accent: #c84f00;
+  --color-blue-accent-dark: #8f3900;
+  --color-star: #c84f00;
+}

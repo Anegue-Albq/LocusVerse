@@ -197,6 +197,29 @@ button {
   min-height: 36px;
 }
 
+.color-mode-toggle {
+  background-color: transparent;
+  border: 2px solid currentColor;
+  border-radius: var(--radius-sm);
+  color: var(--color-navy-900);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  min-height: 36px;
+  padding: 0.45rem 0.65rem;
+}
+
+.theme-dark .color-mode-toggle {
+  color: var(--color-white);
+}
+
+.color-mode-toggle[aria-pressed="true"] {
+  background-color: var(--color-blue-accent-dark);
+  border-color: var(--color-blue-accent-dark);
+  color: var(--color-white);
+}
+
 .btn-icon {
   padding: 0.5rem;
   min-width: 44px;
@@ -456,6 +479,10 @@ button {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.icon-links .color-mode-toggle {
+  white-space: nowrap;
 }
 
 .icon-link {

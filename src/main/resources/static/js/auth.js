@@ -86,6 +86,9 @@
         if (statusEl) {
           statusEl.textContent = "Formulário enviado com sucesso.";
         }
+        if (form.classList.contains("payment-form")) {
+          form.dispatchEvent(new CustomEvent("checkout:complete"));
+        }
         form.reset();
       });
     });

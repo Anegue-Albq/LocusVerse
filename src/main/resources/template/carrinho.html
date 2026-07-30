@@ -191,17 +191,18 @@
           <div class="cart-summary">
             <dl>
               <dt>Subtotal:</dt>
-              <dd>R$00,00</dd>
+              <dd data-cart-subtotal>R$00,00</dd>
               <dt>Taxas:</dt>
-              <dd>R$00,00</dd>
+              <dd data-cart-shipping>R$00,00</dd>
               <dt class="total-row">Total:</dt>
-              <dd class="total-row">R$00,00</dd>
+              <dd class="total-row" data-cart-total>R$00,00</dd>
             </dl>
           </div>
         </div>
 
         <div class="cart-panel">
           <form class="payment-form" data-validate novalidate aria-label="Formulário de pagamento">
+            <p class="form-status" data-checkout-status tabindex="-1" role="status" aria-live="polite"></p>
             <fieldset>
               <legend>Dados para contato</legend>
               <div class="field">

@@ -4,6 +4,10 @@
 
   var CART_KEY = "locusverso:cart-items";
 
+  function formatCurrency(value) {
+    return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value);
+  }
+
   function getCartItems() {
     try {
       return JSON.parse(window.localStorage.getItem(CART_KEY) || "[]");
@@ -26,7 +30,7 @@
   function updateItemCount(items) {
     var countEl = document.querySelector("[data-cart-count]");
     var srEl = document.querySelector("[data-cart-count-sr]");
-    var count = items.length;
+    var count = items.reduce(function (total, item) { return total + item.quantity; }, 0);
 
     if (countEl) countEl.textContent = String(count);
     if (srEl) srEl.textContent = count + (count === 1 ? " item no carrinho" : " itens no carrinho");
@@ -39,19 +43,23 @@
 
     list.innerHTML = "";
 
+    var summary = document.querySelector(".cart-summary");
     if (!items.length) {
       list.innerHTML = '<li class="cart-empty">Seu carrinho está vazio.</li>';
+      if (summary) summary.hidden = true;
       updateItemCount(items);
       return;
     }
+
+    if (summary) summary.hidden = false;
 
     items.forEach(function (item, index) {
       var listItem = document.createElement("li");
       listItem.className = "cart-item";
       listItem.innerHTML =
-        '<img class="cart-item__image" src="../static/assets/product-placeholder.svg" alt="Imagem do produto ' + item.name + '">' +
+        '<img class="cart-item__image" src="' + item.image + '" alt="Imagem do produto ' + item.name + '">' +
         '<p class="cart-item__name"></p>' +
-        '<p class="cart-item__price">R$00,00</p>' +
+        '<p class="cart-item__price">' + formatCurrency(item.price) + '</p>' +
         '<div class="cart-item__controls">' +
           '<div class="stepper">' +
             '<button type="button" data-step="-1" aria-label="Diminuir quantidade">−</button>' +
@@ -93,9 +101,27 @@
     });
 
     updateItemCount(items);
+    var subtotal = items.reduce(function (total, item) { return total + item.price * item.quantity; }, 0);
+    var shipping = subtotal >= 200 ? 0 : 19.9;
+    document.querySelector("[data-cart-subtotal]").textContent = formatCurrency(subtotal);
+    document.querySelector("[data-cart-shipping]").textContent = shipping === 0 ? "Grátis" : formatCurrency(shipping);
+    document.querySelector("[data-cart-total]").textContent = formatCurrency(subtotal + shipping);
+  }
+
+  function initCheckout() {
+    var form = document.querySelector(".payment-form");
+    var status = document.querySelector("[data-checkout-status]");
+    if (!form) return;
+    form.addEventListener("checkout:complete", function () {
+      window.localStorage.removeItem(CART_KEY);
+      renderCart();
+      status.textContent = "Pedido confirmado. Em breve você receberá os detalhes por e-mail.";
+      status.focus();
+    });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     renderCart();
+    initCheckout();
   });
 })();

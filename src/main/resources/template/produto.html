@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto - LocusVerso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/tokens.css" />
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="stylesheet" href="../static/css/produtos.css" />
+</head>
+<body class="theme-light">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+  <p class="sr-only" role="status" aria-live="polite" data-live-region></p>
+
+  <header class="site-header site-header--light">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="LocusVerso - página inicial">
+        <img class="logo__image" src="../static/assets/logo-locusverso.png" alt="" />
+      </a>
+      <nav aria-label="Navegação do produto">
+        <a class="btn btn-outline" href="produtos.html">Voltar ao catálogo</a>
+      </nav>
+      <a class="icon-link" href="carrinho.html">
+        <span class="sr-only">Carrinho,</span><span aria-hidden="true">Carrinho</span>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-count-sr>0 itens no carrinho</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="product-detail-section">
+      <div class="container product-detail" data-product-detail></div>
+    </section>
+  </main>
+
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/catalogo.js"></script>
+  <script src="../static/js/produto.js"></script>
+</body>
+</html>

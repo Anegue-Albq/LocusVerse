@@ -181,6 +181,18 @@
   gap: var(--space-3);
 }
 
+.form-status {
+  color: var(--color-success);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .checkbox-field {
   display: flex;
   align-items: flex-start;

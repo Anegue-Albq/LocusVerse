@@ -1,4 +1,6 @@
-# LocusVerse ☄️🌌
+# LocusVerso ☄️🌌
+
+![Logo LocusVerso](logoLocusVerso.png)
 
 Aplicação para catálogo e compra de action figures colecionáveis, composta por uma API Java com Spring Boot e páginas web responsivas.
 

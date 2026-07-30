@@ -19,6 +19,7 @@ public class CarrinhoController {
 
     @GetMapping
     public CarrinhoResponseDto getCarrinho(@AuthenticationPrincipal UsuarioEntity usuario) {
+        System.out.println(usuario);
         return carrinhoService.listarCarrinho(usuario);
     }
 

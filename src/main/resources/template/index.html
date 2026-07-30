@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="../static/css/tokens.css" />
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="stylesheet" href="../static/css/home.css" />
 </head>
 <body class="theme-dark">
   <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -48,31 +48,31 @@
           <p class="sr-only" role="status" aria-live="polite" data-carousel-status>Mostrando personagem 1 de 3: Peres</p>
 
           <ul class="hero__track">
-            <li class="hero__slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 3" data-slide>
+            <li class="hero__slide is-active" id="hero-panel-0" role="tabpanel" aria-roledescription="slide" aria-label="1 de 3" aria-labelledby="hero-tab-0" data-slide>
               <div class="hero__text">
                 <h1 class="hero__title">PERES</h1>
                 <p class="hero__desc">Acabamento premium para os verdadeiros colecionadores. Venha conheçer mais</p>
                 <a class="btn btn-primary" href="produtos.html">Compre agora</a>
               </div>
-              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Peres" width="240" height="400" />
+              <img class="hero__figure" src="../static/assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Peres" width="240" height="400" />
             </li>
 
-            <li class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 de 3" data-slide hidden>
+            <li class="hero__slide" id="hero-panel-1" role="tabpanel" aria-roledescription="slide" aria-label="2 de 3" aria-labelledby="hero-tab-1" data-slide hidden>
               <div class="hero__text">
                 <h1 class="hero__title">ERIK</h1>
                 <p class="hero__desc">Peças que roubam a atenção de qualquer ambiente.</p>
                 <a class="btn btn-primary" href="produtos.html">Compre agora</a>
               </div>
-              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Erik" width="240" height="400" />
+              <img class="hero__figure" src="../static/assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Erik" width="240" height="400" />
             </li>
 
-            <li class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 de 3" data-slide hidden>
+            <li class="hero__slide" id="hero-panel-2" role="tabpanel" aria-roledescription="slide" aria-label="3 de 3" aria-labelledby="hero-tab-2" data-slide hidden>
               <div class="hero__text">
                 <h1 class="hero__title">ENZO</h1>
                 <p class="hero__desc">Encontre o próximo destaque da sua estante.</p>
                 <a class="btn btn-primary" href="produtos.html">Compre agora</a>
               </div>
-              <img class="hero__figure" src="assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Enzo" width="240" height="400" />
+              <img class="hero__figure" src="../static/assets/figure-placeholder.svg" alt="Foto ilustrativa do action figure personalizado do personagem Enzo" width="240" height="400" />
             </li>
           </ul>
 
@@ -142,7 +142,7 @@
             <li>Receba em casa, sua action figure será enviada com cuidado para chegar em perfeitas condições.</li>
           </ol>
         </div>
-        <img class="how-it-works__image" src="assets/figure-placeholder.svg" alt="Fotos ilustrativas de três action figures personalizadas lado a lado" width="360" height="240" />
+        <img class="how-it-works__image" src="../static/assets/figure-placeholder.svg" alt="Fotos ilustrativas de três action figures personalizadas lado a lado" width="360" height="240" />
       </div>
     </section>
 
@@ -218,7 +218,7 @@
     <p class="site-footer__bottom">© <span data-current-year>2026</span> LocusVerso. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/carousel.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/carousel.js"></script>
 </body>
 </html>

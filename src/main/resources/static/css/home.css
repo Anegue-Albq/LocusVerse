@@ -29,11 +29,10 @@ body.theme-dark {
 }
 
 .hero__slide {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: var(--space-6);
-  flex-wrap: wrap;
 }
 
 .hero__slide[hidden] {
@@ -59,9 +58,19 @@ body.theme-dark {
 }
 
 .hero__figure {
-  flex: 0 1 260px;
+  justify-self: center;
   max-width: 260px;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+@media (max-width: 720px) {
+  .hero__slide {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__text {
+    justify-self: center;
+  }
 }
 
 .hero__next {

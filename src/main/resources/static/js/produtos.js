@@ -4,18 +4,22 @@
 (function () {
   "use strict";
 
-  var CART_KEY = "locusverso:cart-count";
+  var CART_KEY = "locusverso:cart-items";
 
-  function getCartCount() {
-    return parseInt(window.localStorage.getItem(CART_KEY) || "0", 10);
+  function getCartItems() {
+    try {
+      return JSON.parse(window.localStorage.getItem(CART_KEY) || "[]");
+    } catch (error) {
+      return [];
+    }
   }
 
-  function setCartCount(value) {
-    window.localStorage.setItem(CART_KEY, String(value));
+  function setCartItems(items) {
+    window.localStorage.setItem(CART_KEY, JSON.stringify(items));
     var badge = document.querySelector("[data-cart-count]");
     var srCount = document.querySelector("[data-cart-count-sr]");
-    if (badge) badge.textContent = String(value);
-    if (srCount) srCount.textContent = value + (value === 1 ? " item no carrinho" : " itens no carrinho");
+    if (badge) badge.textContent = String(items.length);
+    if (srCount) srCount.textContent = items.length + (items.length === 1 ? " item no carrinho" : " itens no carrinho");
   }
 
   function announce(message) {
@@ -42,14 +46,16 @@
     document.querySelectorAll("[data-add-to-cart]").forEach(function (button) {
       button.addEventListener("click", function () {
         var productName = button.closest(".product-card").querySelector(".product-card__name").textContent.trim();
-        setCartCount(getCartCount() + 1);
+        var items = getCartItems();
+        items.push({ name: productName, quantity: 1 });
+        setCartItems(items);
         announce(productName + " adicionado ao carrinho.");
       });
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    setCartCount(getCartCount());
+    setCartItems(getCartItems());
     initFavorites();
     initAddToCart();
   });

@@ -131,7 +131,7 @@ body.theme-light {
 .product-card__favorite {
   background: none;
   border: none;
-  color: var(--color-yellow-600);
+  color: var(--color-blue-accent-dark);
   cursor: pointer;
   padding: var(--space-2);
   min-width: 40px;

@@ -1,6 +1,8 @@
 package com.example.locusverse.dto;
 
+import java.util.UUID;
+
 public record FavoritoResponseDto(
-        Long idFavorito,
+        UUID idFavorito,
         ProdutoResponseDto produto
 ) {}

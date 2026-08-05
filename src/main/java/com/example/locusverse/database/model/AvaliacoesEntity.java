@@ -2,6 +2,7 @@ package com.example.locusverse.database.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,9 +14,9 @@ import java.time.LocalDateTime;
 public class AvaliacoesEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @EqualsAndHashCode.Include
-    private Long id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_produto")

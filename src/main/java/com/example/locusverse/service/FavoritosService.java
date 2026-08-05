@@ -5,6 +5,7 @@ import com.example.locusverse.database.model.ProdutoEntity;
 import com.example.locusverse.database.model.UsuarioEntity;
 import com.example.locusverse.database.repository.IFavoritosRepository;
 import com.example.locusverse.database.repository.IProdutoRepository;
+import com.example.locusverse.database.repository.IUsuarioRepository;
 import com.example.locusverse.dto.CategoriaDto;
 import com.example.locusverse.dto.FavoritoResponseDto;
 import com.example.locusverse.dto.ProdutoResponseDto;
@@ -13,6 +14,7 @@ import com.example.locusverse.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -22,6 +24,7 @@ import java.util.UUID;
 public class FavoritosService {
 
     private final IFavoritosRepository favoritosRepository;
+    private final IUsuarioRepository usuarioRepository;
     private final IProdutoRepository produtoRepository;
 
     public void adicionar(UsuarioEntity usuario, UUID produtoId) {
@@ -43,21 +46,15 @@ public class FavoritosService {
         return favoritosRepository.findByUsuario(usuario)
                 .stream()
                 .map(favorito -> new FavoritoResponseDto(
-                        favorito.getIdFavorito(), // atenção: getter é getIdFavorito(), não getId()
+                        favorito.getIdFavorito(),
                         toProdutoResponseDto(favorito.getProduto())
                 ))
                 .toList();
     }
 
-    public void remover(UsuarioEntity usuario, Long idFavorito) {
-        FavoritosEntity favorito = favoritosRepository.findById(idFavorito)
-                .orElseThrow(() -> new NotFoundException("Favorito não encontrado"));
-
-        if (!favorito.getUsuario().getId().equals(usuario.getId())) {
-            throw new AccessDeniedException("Esse favorito não pertence a você");
-        }
-
-        favoritosRepository.delete(favorito);
+    @Transactional
+    public void removerFavorito(UsuarioEntity usuario, UUID idFavorito) {
+        favoritosRepository.deleteByUsuario_IdAndIdFavorito(usuario.getId(), idFavorito);
     }
 
     private ProdutoResponseDto toProdutoResponseDto(ProdutoEntity produto) {

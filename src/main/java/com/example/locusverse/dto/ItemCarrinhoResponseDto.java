@@ -1,9 +1,10 @@
 package com.example.locusverse.dto;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public record ItemCarrinhoResponseDto(
-        Long id,
+        UUID id,
         ProdutoResponseDto produto,
         Integer quantidade,
         BigDecimal precoUnitario,

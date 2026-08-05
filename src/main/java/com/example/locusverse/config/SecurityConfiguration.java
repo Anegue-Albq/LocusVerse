@@ -37,8 +37,14 @@ public class SecurityConfiguration {
                             response.setStatus(HttpStatus.FORBIDDEN.value());
                         }))
                 .authorizeHttpRequests(auth -> auth
-                        // TODO: ensure adequate access in endpoints
+                        .requestMatchers("/", "/*.html").permitAll()
+                        .requestMatchers("/template/**", "/css/**", "/js/**", "/assets/**", "/*.svg").permitAll()
+                        .requestMatchers("/static/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v1/produto").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v1/categoria").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v1/avaliacoes/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v1/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

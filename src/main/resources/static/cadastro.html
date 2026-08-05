@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entrar na conta — LocusVerso</title>
-  <meta name="description" content="Acesse sua conta LocusVerso para acompanhar seus pedidos e sua coleção de action figures." />
+  <title>Criar conta — LocusVerso</title>
+  <meta name="description" content="Crie sua conta LocusVerso e comece a montar sua coleção de action figures personalizadas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../static/css/tokens.css" />
-  <link rel="stylesheet" href="../static/css/base.css" />
-  <link rel="stylesheet" href="../static/css/auth.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body class="theme-dark auth-page">
   <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -34,8 +34,8 @@
         </ul>
         <div class="header-actions">
           <button type="button" class="color-mode-toggle" data-color-mode-toggle aria-pressed="false">Paleta acessível</button>
-          <a class="btn btn-outline-light btn-sm" href="login.html" aria-current="page">Acesse sua conta</a>
-          <a class="btn btn-yellow btn-sm" href="cadastro.html">Crie sua conta</a>
+          <a class="btn btn-outline-light btn-sm" href="login.html">Acesse sua conta</a>
+          <a class="btn btn-yellow btn-sm" href="cadastro.html" aria-current="page">Crie sua conta</a>
         </div>
       </nav>
     </div>
@@ -43,56 +43,67 @@
 
   <main id="conteudo-principal">
     <div class="auth-card">
-      <h1>Entre na conta</h1>
+      <h1>Faça seu Cadastro</h1>
 
       <p class="sr-only" role="status" data-form-status></p>
 
       <form data-validate novalidate>
         <div class="field">
-          <label for="login-email">Email</label>
+          <label for="cadastro-email">Email</label>
           <input
             type="email"
-            id="login-email"
+            id="cadastro-email"
             name="email"
             required
             autocomplete="email"
             placeholder="Digite seu email"
-            aria-describedby="login-email-error"
+            aria-describedby="cadastro-email-error"
           />
-          <p class="error" id="login-email-error" aria-live="polite"></p>
+          <p class="error" id="cadastro-email-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
-          <label for="login-senha">Senha</label>
+          <label for="cadastro-senha">Senha</label>
           <div class="input-with-action">
             <input
               type="password"
-              id="login-senha"
+              id="cadastro-senha"
               name="senha"
               required
               minlength="6"
-              autocomplete="current-password"
+              autocomplete="new-password"
               placeholder="Digite sua senha"
-              aria-describedby="login-senha-error"
+              aria-describedby="cadastro-senha-error cadastro-senha-hint"
             />
-            <button type="button" class="input-action" data-password-toggle="login-senha" aria-pressed="false" aria-label="Mostrar senha">
+            <button type="button" class="input-action" data-password-toggle="cadastro-senha" aria-pressed="false" aria-label="Mostrar senha">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                 <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6" />
                 <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" />
               </svg>
             </button>
           </div>
-          <p class="error" id="login-senha-error" aria-live="polite"></p>
+          <p class="hint" id="cadastro-senha-hint">Use no mínimo 6 caracteres.</p>
+          <p class="error" id="cadastro-senha-error" aria-live="polite"></p>
         </div>
 
-        <p class="form-links">
-          Esqueceu a senha? <a href="#">Redefina sua senha</a>
-        </p>
+        <div class="field">
+          <label for="cadastro-nome">Nome Completo</label>
+          <input
+            type="text"
+            id="cadastro-nome"
+            name="nome"
+            required
+            autocomplete="name"
+            placeholder="Digite seu nome"
+            aria-describedby="cadastro-nome-error"
+          />
+          <p class="error" id="cadastro-nome-error" aria-live="polite"></p>
+        </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
         <p class="switch-link">
-          Não tem uma conta? <a href="cadastro.html">Cadastre sua conta</a>
+          Já tem uma conta? <a href="login.html">Clique aqui para entrar</a>
         </p>
 
         <p class="legal-text">
@@ -163,7 +174,7 @@
     <p class="site-footer__bottom">© <span data-current-year>2026</span> LocusVerso. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="../static/js/main.js"></script>
-  <script src="../static/js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>

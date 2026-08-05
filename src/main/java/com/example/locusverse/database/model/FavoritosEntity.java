@@ -2,6 +2,8 @@ package com.example.locusverse.database.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -12,10 +14,10 @@ import lombok.*;
 public class FavoritosEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id_favorito")
     @EqualsAndHashCode.Include
-    private Long idFavorito;
+    private UUID idFavorito;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_produto")

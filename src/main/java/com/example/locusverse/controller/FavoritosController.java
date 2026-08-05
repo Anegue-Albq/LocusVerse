@@ -33,8 +33,8 @@ public class FavoritosController {
     @DeleteMapping("/{idFavorito}")
     public void remover(
             @AuthenticationPrincipal UsuarioEntity usuario,
-            @PathVariable Long idFavorito
+            @PathVariable UUID idFavorito
     ) {
-        favoritosService.remover(usuario, idFavorito);
+        favoritosService.removerFavorito(usuario, idFavorito);
     }
 }

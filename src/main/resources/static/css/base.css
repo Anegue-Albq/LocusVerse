@@ -498,6 +498,11 @@ button {
   color: var(--color-navy-900);
   font-weight: 700;
   font-size: var(--fs-sm);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .icon-link svg {

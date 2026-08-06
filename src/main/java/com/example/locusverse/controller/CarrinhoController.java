@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/carrinho")
@@ -34,7 +36,7 @@ public class CarrinhoController {
     @PutMapping("/item/{itemId}")
     public CarrinhoResponseDto atualizarQuantidade(
             @AuthenticationPrincipal UsuarioEntity usuario,
-            @PathVariable Long itemId,
+            @PathVariable UUID itemId,
             @RequestBody @Valid AtualizarQuantidadeDto dto
     ) {
         return carrinhoService.atualizarQuantidade(usuario, itemId, dto.quantidade());
@@ -43,7 +45,7 @@ public class CarrinhoController {
     @DeleteMapping("/item/{itemId}")
     public void removerItem(
             @AuthenticationPrincipal UsuarioEntity usuario,
-            @PathVariable Long itemId
+            @PathVariable UUID itemId
     ) {
         carrinhoService.removerItem(usuario, itemId);
     }

@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -71,7 +72,7 @@ public class CarrinhoService {
         return montarResposta(carrinho);
     }
 
-    public void removerItem(UsuarioEntity usuario, Long itemId) {
+    public void removerItem(UsuarioEntity usuario, UUID itemId) {
         ItensCarrinhoEntity item = itensCarrinhoRepository.findById(itemId)
                 .orElseThrow(() -> new NotFoundException("Item não encontrado"));
 
@@ -82,7 +83,7 @@ public class CarrinhoService {
         itensCarrinhoRepository.delete(item);
     }
 
-    public CarrinhoResponseDto atualizarQuantidade(UsuarioEntity usuario, Long itemId, Integer novaQuantidade) {
+    public CarrinhoResponseDto atualizarQuantidade(UsuarioEntity usuario, UUID itemId, Integer novaQuantidade) {
         ItensCarrinhoEntity item = itensCarrinhoRepository.findById(itemId)
                 .orElseThrow(() -> new NotFoundException("Item não encontrado"));
 

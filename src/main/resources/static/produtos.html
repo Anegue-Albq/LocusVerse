@@ -38,13 +38,16 @@
 
       <ul class="icon-links">
         <li><button type="button" class="color-mode-toggle" data-color-mode-toggle aria-pressed="false">Paleta acessível</button></li>
-        <li>
-          <a class="icon-link" href="#">
+        <li class="favorites-dropdown">
+          <button type="button" class="icon-link" data-favorites-toggle aria-haspopup="true" aria-expanded="false" aria-controls="favorites-dropdown-panel">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
               <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
             </svg>
             Favoritos
-          </a>
+          </button>
+          <div class="favorites-dropdown__panel" id="favorites-dropdown-panel" data-favorites-panel hidden>
+            <ul class="favorites-dropdown__list" data-favorites-list></ul>
+          </div>
         </li>
         <li>
           <a class="icon-link" href="login.html">

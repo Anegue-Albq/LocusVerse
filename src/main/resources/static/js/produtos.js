@@ -45,7 +45,7 @@
     li.className = "product-card";
     li.innerHTML =
       '<article>' +
-        '<a class="product-card__link" href="#">' +
+        '<a class="product-card__link" href="produto.html?id=' + produto.id + '">' +
           '<img class="product-card__image" src="' + (produto.imagemUrl || '../static/assets/product-placeholder.svg') + '" alt="Imagem do produto ' + produto.nome + '" />' +
           '<h3 class="product-card__name">' + produto.nome + '</h3>' +
         '</a>' +

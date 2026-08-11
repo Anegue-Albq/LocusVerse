@@ -154,6 +154,63 @@ button {
   }
 }
 
+/* ==========================================================================
+   Color picker — personalização de paleta (cor primária/secundária)
+   ========================================================================== */
+.color-mode-picker {
+  position: relative;
+  display: inline-flex;
+}
+
+.color-mode-picker__panel {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  z-index: 50;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--color-white);
+  color: var(--color-navy-900);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card-lg);
+  padding: var(--space-4);
+  text-align: left;
+}
+
+/* [hidden] precisa vencer o display: flex acima para o toggle funcionar */
+.color-mode-picker__panel[hidden] {
+  display: none;
+}
+
+.color-mode-picker__title {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-navy-900);
+}
+
+.color-mode-picker__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-navy-900);
+}
+
+.color-mode-picker__field input[type="color"] {
+  width: 44px;
+  height: 36px;
+  padding: 0;
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+}
+
 :focus-visible {
   outline: 3px solid var(--color-blue-accent-dark);
   outline-offset: 2px;
@@ -213,12 +270,12 @@ button {
 }
 
 .btn-primary {
-  background-color: var(--color-navy-800);
+  background-color: var(--color-blue-accent);
   color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-navy-700);
+  background-color: var(--color-blue-accent-dark);
 }
 
 .btn-outline-light {

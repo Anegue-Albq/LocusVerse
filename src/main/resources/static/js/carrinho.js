@@ -22,6 +22,17 @@
     if (region) region.textContent = message;
   }
 
+  async function loadFavoritos() {
+    if (!isLoggedIn()) return [];
+    try {
+      var response = await fetch(API_BASE + "/v1/favoritos", { headers: getAuthHeaders() });
+      if (!response.ok) return [];
+      return await response.json();
+    } catch (e) {
+      return [];
+    }
+  }
+
   function formatPrice(value) {
     return "R$" + Number(value).toFixed(2).replace(".", ",");
   }
@@ -166,6 +177,58 @@
     }
   }
 
+  async function openFavoritesSidebar() {
+    var panel = document.querySelector("[data-favorites-panel]");
+    var toggle = document.querySelector("[data-favorites-toggle]");
+    var list = document.querySelector("[data-favorites-list]");
+    if (!panel || !list) return;
+
+    panel.hidden = false;
+    if (toggle) toggle.setAttribute("aria-expanded", "true");
+
+    if (!isLoggedIn()) {
+      list.innerHTML = '<li class="favorites-dropdown__empty">Faça login para ver seus favoritos.</li>';
+      return;
+    }
+
+    list.innerHTML = '<li class="favorites-dropdown__empty">Carregando...</li>';
+    var favoritos = await loadFavoritos();
+
+    if (!favoritos.length) {
+      list.innerHTML = '<li class="favorites-dropdown__empty">Você ainda não tem favoritos.</li>';
+      return;
+    }
+
+    list.innerHTML = favoritos.map(function (f) {
+      return "<li>" + f.produto.nome + "</li>";
+    }).join("");
+  }
+
+  function closeFavoritesSidebar() {
+    var panel = document.querySelector("[data-favorites-panel]");
+    var toggle = document.querySelector("[data-favorites-toggle]");
+    if (panel) panel.hidden = true;
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function initFavoritesSidebar() {
+    var toggle = document.querySelector("[data-favorites-toggle]");
+    var panel = document.querySelector("[data-favorites-panel]");
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (panel.hidden) openFavoritesSidebar();
+      else closeFavoritesSidebar();
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!panel.hidden && !panel.contains(event.target) && event.target !== toggle) {
+        closeFavoritesSidebar();
+      }
+    });
+  }
+
   function initEvents() {
     document.addEventListener("click", function (e) {
       // Stepper buttons
@@ -208,5 +271,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     fetchCarrinho();
     initEvents();
+    initFavoritesSidebar();
   });
 })();

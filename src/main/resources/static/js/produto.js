@@ -21,6 +21,11 @@
     if (region) region.textContent = message;
   }
 
+  function notify(message, variant) {
+    if (window.LocusToast) window.LocusToast.show(message, { variant: variant });
+    announce(message);
+  }
+
   function formatPrice(value) {
     return "R$" + Number(value).toFixed(2).replace(".", ",");
   }
@@ -102,9 +107,9 @@
       if (!response.ok) throw new Error("Erro ao adicionar ao carrinho");
       var data = await response.json();
       updateCartBadge(data.itens ? data.itens.length : 0);
-      announce("Produto adicionado ao carrinho.");
+      notify("Produto adicionado ao carrinho.", "success");
     } catch (e) {
-      announce("Erro ao adicionar ao carrinho.");
+      notify("Erro ao adicionar ao carrinho.", "error");
     }
   }
 
@@ -195,10 +200,10 @@
 
       try {
         await submitAvaliacao(produtoId, notaInput.value, comentario);
-        announce("Avaliação enviada com sucesso.");
+        notify("Avaliação enviada com sucesso!", "success");
         await onSubmitted();
       } catch (e) {
-        announce("Erro ao enviar avaliação. Tente novamente.");
+        notify("Erro ao enviar avaliação. Tente novamente.", "error");
       } finally {
         submitButton.disabled = false;
       }

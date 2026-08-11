@@ -22,6 +22,11 @@
     if (region) region.textContent = message;
   }
 
+  function notify(message, variant) {
+    if (window.LocusToast) window.LocusToast.show(message, { variant: variant });
+    announce(message);
+  }
+
   function updateCartBadge(count) {
     var badge = document.querySelector("[data-cart-count]");
     var srCount = document.querySelector("[data-cart-count-sr]");
@@ -122,9 +127,9 @@
       if (!response.ok) throw new Error("Erro ao adicionar ao carrinho");
       var data = await response.json();
       updateCartBadge(data.itens ? data.itens.length : 0);
-      announce("Produto adicionado ao carrinho.");
+      notify("Produto adicionado ao carrinho.", "success");
     } catch (e) {
-      announce("Erro ao adicionar ao carrinho.");
+      notify("Erro ao adicionar ao carrinho.", "error");
     }
   }
 
@@ -149,7 +154,7 @@
         button.setAttribute("aria-pressed", "false");
         button.removeAttribute("data-fav-id");
         button.querySelector("svg").setAttribute("fill", "none");
-        announce("Removido dos favoritos.");
+        notify("Removido dos favoritos.", "success");
       } else {
         // Adicionar favorito
         var response = await fetch(API_BASE + "/v1/favoritos/" + produtoId, {
@@ -163,10 +168,10 @@
         button.setAttribute("aria-pressed", "true");
         if (newFav) button.setAttribute("data-fav-id", newFav.idFavorito);
         button.querySelector("svg").setAttribute("fill", "currentColor");
-        announce("Adicionado aos favoritos.");
+        notify("Adicionado aos favoritos.", "success");
       }
     } catch (e) {
-      announce("Erro ao atualizar favoritos.");
+      notify("Erro ao atualizar favoritos.", "error");
     }
   }
 

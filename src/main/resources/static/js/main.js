@@ -64,6 +64,38 @@
     }
   }
 
+  function showToast(message, options) {
+    options = options || {};
+    var container = document.querySelector("[data-toast-container]");
+    if (!container) {
+      container = document.createElement("div");
+      container.className = "toast-container";
+      container.setAttribute("data-toast-container", "");
+      container.setAttribute("role", "status");
+      container.setAttribute("aria-live", "polite");
+      document.body.appendChild(container);
+    }
+
+    var toast = document.createElement("div");
+    toast.className = "toast" + (options.variant ? " toast--" + options.variant : "");
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    window.requestAnimationFrame(function () {
+      toast.classList.add("toast--visible");
+    });
+
+    var duration = options.duration || 3500;
+    window.setTimeout(function () {
+      toast.classList.remove("toast--visible");
+      toast.addEventListener("transitionend", function () {
+        toast.remove();
+      }, { once: true });
+    }, duration);
+  }
+
+  window.LocusToast = { show: showToast };
+
   document.addEventListener("DOMContentLoaded", function () {
     initColorMode();
     initMobileNav();

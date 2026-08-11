@@ -244,31 +244,79 @@
     });
   }
 
+  // Remove acentos/caixa pra comparação de busca mais tolerante
+  function normalizeText(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+  }
+
+  // Máximo de produtos exibidos na seção "Conheça nossos produtos"
+  var CATALOGO_LIMITE = 4;
+
+  function renderGrids(produtos, favoritos) {
+    var grids = document.querySelectorAll(".product-grid");
+    if (grids.length === 0) return;
+
+    // Primeira grid: catálogo (filtrado pela busca, se houver termo), limitado a 4 produtos
+    grids[0].innerHTML = "";
+    if (produtos.length === 0) {
+      grids[0].innerHTML = '<li class="favorites-dropdown__empty">Nenhum produto encontrado.</li>';
+    } else {
+      produtos.slice(0, CATALOGO_LIMITE).forEach(function (produto) {
+        grids[0].appendChild(createProductCard(produto, favoritos));
+      });
+    }
+
+    // Segunda grid (lançamentos): últimos 8 produtos do catálogo filtrado
+    if (grids.length > 1) {
+      grids[1].innerHTML = "";
+      var lancamentos = produtos.slice(-8);
+      lancamentos.forEach(function (produto) {
+        grids[1].appendChild(createProductCard(produto, favoritos));
+      });
+    }
+  }
+
+  function initSearch(getState) {
+    var form = document.querySelector(".search-form");
+    var input = document.getElementById("produto-busca");
+    if (!form || !input) return;
+
+    function applyFilter() {
+      var termo = normalizeText(input.value);
+      var state = getState();
+      var filtrados = termo
+        ? state.produtos.filter(function (produto) {
+            return normalizeText(produto.nome).indexOf(termo) !== -1;
+          })
+        : state.produtos;
+      renderGrids(filtrados, state.favoritos);
+      announce(filtrados.length + (filtrados.length === 1 ? " produto encontrado." : " produtos encontrados."));
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      applyFilter();
+    });
+
+    input.addEventListener("input", applyFilter);
+  }
+
   async function init() {
     var produtos = await loadProducts();
     var favoritos = await loadFavoritos();
 
-    var grids = document.querySelectorAll(".product-grid");
-    if (grids.length > 0 && produtos.length > 0) {
-      // Primeira grid: todos os produtos
-      grids[0].innerHTML = "";
-      produtos.forEach(function (produto) {
-        grids[0].appendChild(createProductCard(produto, favoritos));
-      });
-
-      // Segunda grid (lançamentos): últimos 8 produtos
-      if (grids.length > 1) {
-        grids[1].innerHTML = "";
-        var lancamentos = produtos.slice(-8);
-        lancamentos.forEach(function (produto) {
-          grids[1].appendChild(createProductCard(produto, favoritos));
-        });
-      }
-    }
+    renderGrids(produtos, favoritos);
 
     loadCartCount();
     initEvents();
     initFavoritesSidebar();
+    initSearch(function () {
+      return { produtos: produtos, favoritos: favoritos };
+    });
   }
 
   document.addEventListener("DOMContentLoaded", init);

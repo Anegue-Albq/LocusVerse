@@ -8,19 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/produtos.css" />
+  <link rel="stylesheet" href="../static/css/tokens.css" />
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="stylesheet" href="../static/css/produtos.css" />
 </head>
 <body class="theme-light">
   <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
   <p class="sr-only" role="status" aria-live="polite" data-live-region></p>
 
-  <header class="site-header site-header--light">
+  <header class="site-header">
     <div class="container">
-      <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
-        <span class="logo__brand" aria-hidden="true">LOCUS</span>
-        <span class="logo__sub" aria-hidden="true">Verso</span>
+      <a class="logo" href="produtos.html" aria-label="LocusVerso — página inicial">
+        <img class="logo__image" src="../static/assets/logoLocusVerso.png" alt="LocusVerso" />
       </a>
 
       <form class="search-form" role="search" aria-label="Buscar produtos">
@@ -38,7 +37,7 @@
 
       <ul class="icon-links">
         <li>
-          <a class="icon-link" href="#">
+          <a class="icon-link" href="favoritos.html" aria-label="Ver favoritos">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
               <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
             </svg>
@@ -46,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a class="icon-link" href="login.html">
+          <a class="icon-link" href="minha-conta.html" data-account-link>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
               <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6" />
               <path d="M4.5 20c1.4-3.6 4.4-5.6 7.5-5.6s6.1 2 7.5 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
@@ -132,8 +131,8 @@
         <ul class="product-grid">
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 1</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -144,7 +143,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 1 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -155,8 +154,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 2</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -167,7 +166,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 2 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -178,8 +177,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 3</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -190,7 +189,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 3 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -201,8 +200,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 4</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -213,7 +212,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 4 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -224,8 +223,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 5</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -236,7 +235,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 5 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -247,8 +246,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 6</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -259,7 +258,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 6 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -270,8 +269,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 7</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -282,7 +281,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 7 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -293,8 +292,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 8</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -305,7 +304,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 8 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -324,8 +323,8 @@
         <ul class="product-grid">
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 9</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -336,7 +335,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 9 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -347,8 +346,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 10</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -359,7 +358,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 10 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -370,8 +369,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 11</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -382,7 +381,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 11 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -393,8 +392,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 12</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -405,7 +404,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 12 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -416,8 +415,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 13</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -428,7 +427,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 13 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -439,8 +438,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 14</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -451,7 +450,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 14 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -462,8 +461,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 15</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -474,7 +473,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 15 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -485,8 +484,8 @@
             </li>
             <li class="product-card">
               <article>
-                <a class="product-card__link" href="#">
-                  <img class="product-card__image" src="assets/product-placeholder.svg" alt="" />
+                <a class="product-card__link" href="produto-detalhe.html">
+                  <img class="product-card__image" src="../static/assets/product-placeholder.svg" alt="" />
                   <h3 class="product-card__name">Nome Produto 16</h3>
                 </a>
                 <p class="product-card__rating" aria-label="Avaliação: 5 de 5 estrelas">
@@ -497,7 +496,7 @@
                   R$00,00
                 </p>
                 <div class="product-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm product-card__add" data-add-to-cart>Adicionar ao carrinho</button>
+                  <a class="btn btn-primary btn-sm product-card__add" href="produto-detalhe.html">Comprar</a>
                   <button type="button" class="product-card__favorite" data-favorite aria-pressed="false" aria-label="Adicionar Nome Produto 16 aos favoritos">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.7 4.8 6 4.1c2-.4 3.8.4 5 2 1.2-1.6 3-2.4 5-2 3.3.7 4.8 3.9 3.3 7.1C19 15.6 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -514,9 +513,8 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__brand">
-        <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
-          <span class="logo__brand" aria-hidden="true">LOCUS</span>
-          <span class="logo__sub" aria-hidden="true">Verso</span>
+        <a class="logo" href="produtos.html" aria-label="LocusVerso — página inicial">
+          <img class="logo__image" src="../static/assets/logoLocusVerso.png" alt="LocusVerso" />
         </a>
         <ul class="site-footer__social" aria-label="Redes sociais da LocusVerso">
           <li><a href="#" aria-label="LocusVerso no X (Twitter)">X</a></li>
@@ -572,7 +570,7 @@
     <p class="site-footer__bottom">© <span data-current-year>2026</span> LocusVerso. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/produtos.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/produtos.js"></script>
 </body>
 </html>

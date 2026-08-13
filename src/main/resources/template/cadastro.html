@@ -8,18 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="../static/css/tokens.css" />
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="stylesheet" href="../static/css/auth.css" />
 </head>
 <body class="theme-dark auth-page">
   <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
-        <span class="logo__brand" aria-hidden="true">LOCUS</span>
-        <span class="logo__sub" aria-hidden="true">Verso</span>
+      <a class="logo" href="produtos.html" aria-label="LocusVerso — página inicial">
+        <img class="logo__image" src="../static/assets/logoLocusVerso.png" alt="LocusVerso" />
       </a>
 
       <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
@@ -28,12 +27,12 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <ul class="main-nav__list">
-          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Início</a></li>
           <li><a href="index.html#como-funciona">Como funciona</a></li>
           <li><a href="index.html#sobre-nos">Sobre nós</a></li>
         </ul>
         <div class="header-actions">
-          <a class="btn btn-outline-light btn-sm" href="login.html">Acesse sua conta</a>
+          <a class="btn btn-outline-light btn-sm" href="minha-conta.html" data-account-link>Acesse sua conta</a>
           <a class="btn btn-yellow btn-sm" href="cadastro.html" aria-current="page">Crie sua conta</a>
         </div>
       </nav>
@@ -102,7 +101,7 @@
         <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
         <p class="switch-link">
-          Já tem uma conta? <a href="login.html">Clique aqui para entrar</a>
+          Já tem uma conta? <a href="minha-conta.html" data-account-link>Clique aqui para entrar</a>
         </p>
 
         <p class="legal-text">
@@ -115,9 +114,8 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__brand">
-        <a class="logo" href="index.html" aria-label="LocusVerso — página inicial">
-          <span class="logo__brand" aria-hidden="true">LOCUS</span>
-          <span class="logo__sub" aria-hidden="true">Verso</span>
+        <a class="logo" href="produtos.html" aria-label="LocusVerso — página inicial">
+          <img class="logo__image" src="../static/assets/logoLocusVerso.png" alt="LocusVerso" />
         </a>
         <ul class="site-footer__social" aria-label="Redes sociais da LocusVerso">
           <li><a href="#" aria-label="LocusVerso no X (Twitter)">X</a></li>
@@ -173,7 +171,7 @@
     <p class="site-footer__bottom">© <span data-current-year>2026</span> LocusVerso. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/auth.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/auth.js"></script>
 </body>
 </html>

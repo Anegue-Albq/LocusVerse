@@ -300,6 +300,14 @@ button {
   font-family: var(--font-heading);
 }
 
+.logo__image {
+  display: block;
+  width: 6rem;
+  height: auto;
+  max-height: 3.5rem;
+  object-fit: contain;
+}
+
 .logo__brand {
   font-weight: 800;
   font-size: var(--fs-lg);
@@ -453,17 +461,44 @@ button {
   margin: 0;
 }
 
+.icon-links li {
+  display: flex;
+  align-items: center;
+}
+
 .icon-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   text-decoration: none;
-  color: var(--color-navy-900);
+  color: var(--color-white);
   font-weight: 700;
   font-size: var(--fs-sm);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Reset para botões que usam a classe .icon-link */
+button.icon-link {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
 .icon-link svg {
+  display: block;
+  flex: 0 0 auto;
+  color: var(--color-yellow-500);
+  width: 26px;
+  height: 26px;
+}
+
+.site-header--light .icon-link {
+  color: var(--color-navy-900);
+}
+
+.site-header--light .icon-link svg {
   color: var(--color-yellow-600);
 }
 
@@ -569,4 +604,280 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--color-gray-300);
+}
+
+/* ==========================================================================
+   Modo escuro — ativado via html.theme-dark (toggle do usuário)
+   Aplica-se às páginas de tema claro; páginas que já são escuras não mudam.
+   ========================================================================== */
+
+/* Botão de toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Páginas claras (produtos, carrinho, suporte) */
+html.theme-dark body.theme-light,
+body.theme-dark.theme-light {
+  background-color: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+/* Dark mode — header (força escuro independente da variante --light) */
+html.theme-dark .site-header--light,
+body.theme-dark .site-header--light {
+  background-color: var(--color-navy-900) !important;
+  border-bottom: 1px solid rgba(255, 201, 0, 0.25) !important;
+}
+
+html.theme-dark .site-header--light .logo__brand,
+body.theme-dark .site-header--light .logo__brand {
+  color: var(--color-yellow-500) !important;
+}
+
+html.theme-dark .site-header--light .icon-link,
+body.theme-dark .site-header--light .icon-link {
+  color: var(--color-white) !important;
+}
+
+html.theme-dark .site-header--light .icon-link svg,
+body.theme-dark .site-header--light .icon-link svg {
+  color: var(--color-yellow-500) !important;
+}
+
+html.theme-dark .search-form input[type="search"],
+body.theme-dark .search-form input[type="search"] {
+  background-color: var(--color-navy-800);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.theme-dark .search-form input[type="search"]::placeholder,
+body.theme-dark .search-form input[type="search"]::placeholder {
+  color: var(--color-gray-300);
+}
+
+html.theme-dark .info-strip,
+body.theme-dark .info-strip {
+  background-color: var(--color-navy-850);
+}
+
+html.theme-dark .info-strip__title,
+body.theme-dark .info-strip__title {
+  color: var(--color-white);
+}
+
+html.theme-dark .info-strip__desc,
+body.theme-dark .info-strip__desc {
+  color: var(--color-gray-300);
+}
+
+html.theme-dark .product-card,
+body.theme-dark .product-card {
+  background-color: var(--color-navy-850);
+  color: var(--color-white);
+}
+
+html.theme-dark .product-card__name,
+html.theme-dark .product-card__price,
+body.theme-dark .product-card__name,
+body.theme-dark .product-card__price {
+  color: var(--color-white);
+}
+
+html.theme-dark .product-card__favorite:hover,
+body.theme-dark .product-card__favorite:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+html.theme-dark .section-banner,
+body.theme-dark .section-banner {
+  background-color: var(--color-navy-800);
+}
+
+/* Carrinho */
+html.theme-dark .cart-panel,
+body.theme-dark .cart-panel {
+  background-color: var(--color-navy-850);
+  color: var(--color-white);
+}
+
+html.theme-dark .cart-panel__heading,
+body.theme-dark .cart-panel__heading {
+  color: var(--color-white);
+}
+
+html.theme-dark .cart-item,
+body.theme-dark .cart-item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.theme-dark .cart-item__name,
+html.theme-dark .cart-item__price,
+body.theme-dark .cart-item__name,
+body.theme-dark .cart-item__price {
+  color: var(--color-white);
+}
+
+/* Suporte */
+html.theme-dark .accordion-item,
+body.theme-dark .accordion-item {
+  background-color: var(--color-navy-850);
+}
+
+html.theme-dark .accordion-trigger__title,
+body.theme-dark .accordion-trigger__title {
+  color: var(--color-white);
+}
+
+html.theme-dark .accordion-trigger__icon,
+body.theme-dark .accordion-trigger__icon {
+  background-color: var(--color-navy-800);
+  color: var(--color-yellow-500);
+}
+
+html.theme-dark .accordion-trigger__chevron,
+body.theme-dark .accordion-trigger__chevron {
+  color: var(--color-white);
+}
+
+html.theme-dark .accordion-panel,
+body.theme-dark .accordion-panel {
+  border-top-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-gray-300);
+}
+
+/* Página de detalhe do produto */
+html.theme-dark body.product-detail-page {
+  background: linear-gradient(160deg, var(--color-navy-900) 0%, var(--color-navy-950) 100%);
+}
+
+html.theme-dark .product-detail__card,
+html.theme-dark .review-summary,
+html.theme-dark .reviews {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+}
+
+html.theme-dark .product-detail__title,
+html.theme-dark .reviews__title {
+  color: var(--color-white);
+}
+
+html.theme-dark .product-detail__description,
+html.theme-dark .product-detail__secure {
+  color: var(--color-gray-300);
+}
+
+html.theme-dark .review__text {
+  color: var(--color-gray-300);
+}
+
+html.theme-dark .review {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+html.theme-dark .review__helpful {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: var(--color-gray-300);
+}
+
+html.theme-dark .benefit-pill {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+}
+
+html.theme-dark .benefit-pill__text {
+  color: var(--color-gray-200);
+}
+
+/* ==========================================================================
+   Transição suave entre temas claro e escuro
+   ========================================================================== */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 380ms ease,
+    background 380ms ease,
+    color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease !important;
+}
+
+/* ==========================================================================
+   Switch de tema claro/escuro
+   ========================================================================== */
+.theme-switch-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-switch__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 2.6rem;
+  height: 1.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-300);
+  transition: background 280ms ease;
+  flex-shrink: 0;
+}
+
+.theme-switch__thumb {
+  position: absolute;
+  left: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 280ms ease;
+}
+
+/* Checked = dark mode ativo */
+.theme-switch input:checked ~ .theme-switch__track {
+  background: var(--color-blue-accent);
+}
+
+.theme-switch input:checked ~ .theme-switch__track .theme-switch__thumb {
+  transform: translateX(1.2rem);
+}
+
+.theme-switch__icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-yellow-500);
+  flex-shrink: 0;
+}
+
+/* Focus acessível */
+.theme-switch:focus-within .theme-switch__track {
+  outline: 2px solid var(--color-yellow-500);
+  outline-offset: 2px;
+}
+
+/* Ajuste de cor no header escuro */
+body.theme-dark .theme-switch__track,
+html.theme-dark .theme-switch__track {
+  background: var(--color-navy-700);
+}
+
+body.theme-dark .theme-switch input:checked ~ .theme-switch__track,
+html.theme-dark .theme-switch input:checked ~ .theme-switch__track {
+  background: var(--color-blue-accent);
 }

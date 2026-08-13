@@ -1,0 +1,126 @@
+.account-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  min-height: 32rem;
+}
+
+.account-sidebar,
+.account-card {
+  align-self: start;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+}
+
+.account-sidebar__title {
+  color: var(--color-navy-900);
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-4);
+}
+
+.account-sidebar nav {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.account-sidebar a {
+  border-radius: var(--radius-sm);
+  color: var(--color-navy-900);
+  font-weight: 600;
+  padding: 0.65rem 0.75rem;
+  text-decoration: none;
+}
+
+.account-sidebar a:hover,
+.account-sidebar a.is-active {
+  background: var(--color-yellow-500);
+}
+
+.account-content h2 {
+  color: var(--color-navy-900);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-4);
+}
+
+.account-data {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.account-data div {
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: grid;
+  gap: 0.25rem var(--space-3);
+  grid-template-columns: 1fr auto;
+  padding-bottom: var(--space-3);
+}
+
+.account-data dt {
+  grid-column: 1 / -1;
+  color: var(--color-gray-500);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.account-edit {
+  background: transparent;
+  border: 1px solid var(--color-navy-900);
+  border-radius: var(--radius-sm);
+  color: var(--color-navy-900);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  min-height: 36px;
+  padding: 0.4rem 0.8rem;
+}
+
+.account-edit:hover,
+.account-edit:focus-visible {
+  background: var(--color-yellow-500);
+}
+
+
+.account-data dd {
+  color: var(--color-navy-900);
+  font-size: var(--fs-base);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.account-password {
+  letter-spacing: 0.2em;
+}
+
+.account-note {
+  color: var(--color-gray-500);
+  font-size: var(--fs-sm);
+  margin: var(--space-5) 0 0;
+}
+
+html.theme-dark .account-sidebar,
+html.theme-dark .account-card {
+  background: var(--color-navy-850);
+}
+
+html.theme-dark .account-sidebar__title,
+html.theme-dark .account-sidebar a,
+html.theme-dark .account-content h2,
+html.theme-dark .account-data dd {
+  color: var(--color-white);
+}
+
+@media (max-width: 700px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .account-sidebar nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

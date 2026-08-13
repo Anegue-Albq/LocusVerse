@@ -1,0 +1,118 @@
+body.theme-light {
+  background-color: var(--color-white) !important;
+}
+
+.favorites-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  min-height: 32rem;
+}
+
+.favorites-sidebar {
+  align-self: start;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+}
+
+.favorites-sidebar__title {
+  color: var(--color-navy-900);
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-4);
+}
+
+.favorites-sidebar nav {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.favorites-sidebar a {
+  border-radius: var(--radius-sm);
+  color: var(--color-navy-900);
+  font-weight: 600;
+  padding: 0.65rem 0.75rem;
+  text-decoration: none;
+}
+
+.favorites-sidebar a:hover,
+.favorites-sidebar a.is-active {
+  background: var(--color-yellow-500);
+}
+
+.favorites-content h2 {
+  color: var(--color-navy-900);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-4);
+}
+
+.favorites-empty {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+}
+
+.favorites-grid {
+  margin: 0;
+}
+
+html.theme-dark .favorites-sidebar,
+html.theme-dark .favorites-empty {
+  background: var(--color-navy-850);
+  color: var(--color-white);
+}
+
+.favorites-grid .product-card__favorite {
+  align-items: center !important;
+  display: inline-flex !important;
+  flex: 0 0 52px !important;
+  height: 52px !important;
+  justify-content: center !important;
+  min-width: 52px !important;
+  padding: 0 !important;
+  width: 52px !important;
+}
+
+.favorites-grid .product-card__favorite svg {
+  display: block !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+button.product-card__favorite[data-remove-favorite] {
+  align-items: center !important;
+  color: var(--color-yellow-600) !important;
+  display: inline-flex !important;
+  flex: 0 0 52px !important;
+  font-size: 0 !important;
+  height: 52px !important;
+  justify-content: center !important;
+  min-height: 52px !important;
+  min-width: 52px !important;
+  padding: 0 !important;
+  width: 52px !important;
+}
+
+button.product-card__favorite[data-remove-favorite]::before {
+  content: "♥";
+  display: block;
+  font-size: 32px;
+  line-height: 1;
+}
+
+button.product-card__favorite[data-remove-favorite] svg {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .favorites-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .favorites-sidebar nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
